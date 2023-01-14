@@ -10,22 +10,22 @@ import {
 
 const GoalInput = (props) => {
   const [enteredGoalText, setEnteredGoalText] = useState("");
-  function goalInputHandler(enteredText) {
-    setEnteredGoalText(enteredText);
-  }
 
-  function addGoalHandler() {
+  const goalInputHandler = (enteredText) => {
+    setEnteredGoalText(enteredText);
+  };
+
+  const addGoalHandler = () => {
     checkInputField();
     props.onAddGoal(enteredGoalText);
     setEnteredGoalText("");
-  }
+  };
 
-  function checkInputField() {
+  const checkInputField = () => {
     if (enteredGoalText === "") {
       alert("Goal cannot be empty!");
     }
-  }
-
+  };
   return (
     <Modal visible={props.visible} animationType="slide">
       <View style={styles.inputContainer}>
